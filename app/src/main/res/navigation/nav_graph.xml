@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomekFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ecut.math.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/welcomekFragment"
+        android:name="com.ecut.math.WelcomekFragment"
+        android:label="welcomek_fragment"
+        tools:layout="@layout/welcomek_fragment" >
+        <action
+            android:id="@+id/action_welcomekFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
