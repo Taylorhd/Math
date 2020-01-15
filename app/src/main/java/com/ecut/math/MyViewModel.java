@@ -1,12 +1,15 @@
 package com.ecut.math;
 
+import android.app.Application;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 
-public class MyViewModel extends ViewModel {
+public class MyViewModel extends AndroidViewModel {
 //        private SavedStateHandle handle;
 //
 //    public MyViewModel(SavedStateHandle handle) {
@@ -22,6 +25,10 @@ public class MyViewModel extends ViewModel {
     private MutableLiveData<Integer> maxCount;
     private MutableLiveData<String> showText;
 
+    public MyViewModel(@NonNull Application application) {
+        super(application);
+    }
+
 
     public  MutableLiveData<String> getShowText() {
         if (showText==null){
@@ -33,7 +40,6 @@ public class MyViewModel extends ViewModel {
 
     public void clickOnNum(int i){
         showText.setValue(showText.getValue()+i);
-        Log.d("DetailFragment", "clickOnNum: "+showText.getValue());
     }
 
 
